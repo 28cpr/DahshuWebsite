@@ -316,10 +316,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-size: 0.92rem;
-}
-
-.x-link {
-  background: #000;
+  font-weight: 700;
 }
 
 .linkedin-link {
@@ -328,6 +325,26 @@ body {
 
 .youtube-link {
   background: #ff0000;
+}
+
+.social-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+}
+
+.social-glyph-linkedin {
+  font-size: 0.88rem;
+  text-transform: lowercase;
+}
+
+.social-glyph-youtube {
+  font-size: 0.9rem;
+  transform: translateX(1px);
 }
 
 .photo-credit {
