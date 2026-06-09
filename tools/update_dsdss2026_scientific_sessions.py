@@ -2,19 +2,9 @@
 
 from pathlib import Path
 import re
-from typing import Optional
-
-
-SITE_ROOT = Path(__file__).resolve().parent.parent / "site"
+SITE_ROOT = Path(__file__).resolve().parent.parent
 SESSION_TEMPLATE = SITE_ROOT / "DSDSS2026-scientific-session-1" / "index.html"
 LANDING_TEMPLATE = SITE_ROOT / "DSDSS2026-scientific-sessions" / "index.html"
-LEGACY_SOURCE_PAGES = {
-    1: SITE_ROOT / "page-18146" / "index.html",
-    2: SITE_ROOT / "page-18147" / "index.html",
-    3: SITE_ROOT / "page-18148" / "index.html",
-    4: SITE_ROOT / "page-18149" / "index.html",
-    5: SITE_ROOT / "page-18150" / "index.html",
-}
 
 SESSIONS = [
     {
@@ -22,6 +12,8 @@ SESSIONS = [
         "title": "Session 1",
         "organizer_name": "Haoda Fu",
         "organizer_org": "Amgen",
+        "day": "Thursday, October 22, 2026",
+        "time": "9:50 AM - 11:30 AM",
         "summary": [
             "This showcase bridges the gap between academic research and pharmaceutical industry application by bringing together leading experts to highlight the real-world impact of artificial intelligence.",
             "Moving past theoretical hype, the session features a curated selection of high-impact, concrete case studies demonstrating how AI is actively transforming medicine.",
@@ -34,6 +26,8 @@ SESSIONS = [
         "title": "Session 2",
         "organizer_name": "Runze Li",
         "organizer_org": "PSU",
+        "day": "Thursday, October 22, 2026",
+        "time": "1:00 PM - 2:40 PM",
         "summary": [
             "Abstract to be provided.",
         ],
@@ -43,6 +37,8 @@ SESSIONS = [
         "title": "Session 3",
         "organizer_name": "Sara Hamon",
         "organizer_org": "Regeneron",
+        "day": "Thursday, October 22, 2026",
+        "time": "2:50 PM - 4:30 PM",
         "summary": [
             "This session examines how advanced technologies are reshaping clinical trials as artificial intelligence (AI), machine learning (ML), and digital health tools become embedded across the drug development life cycle - from trial design and patient selection to endpoint assessment and regulatory decision-making.",
             "The session will share case examples leveraging predictive models, wearable-derived endpoints, and real-world data.",
@@ -54,6 +50,8 @@ SESSIONS = [
         "title": "Session 4",
         "organizer_name": "Jane Zhang",
         "organizer_org": "AbbVie",
+        "day": "Thursday, October 22, 2026",
+        "time": "4:40 PM - 5:40 PM",
         "summary": [
             "As the volume of Real-World Data (RWD) expands, the pharmaceutical industry faces a critical bottleneck: transforming unstructured data into rigorous, actionable clinical evidence.",
             "This session explores the end-to-end architecture required to achieve this, bridging cutting-edge causal inference methodology with modern data infrastructure and pharmaceutical execution.",
@@ -65,6 +63,8 @@ SESSIONS = [
         "title": "Session 5",
         "organizer_name": "Jacek Urbanek",
         "organizer_org": "Regeneron",
+        "day": "Friday, October 23, 2026",
+        "time": "8:30 AM - 9:30 AM",
         "summary": [
             "This session traces the end-to-end arc of immunology-driven drug development - from population-scale genetics that nominate causal targets, through translational biomarker discovery and patient stratification, to late-phase clinical trials that convert hypotheses into actionable evidence.",
             "The program highlights how statistical genetics, computational biology, and clinical biostatistics intersect to advance therapies for immune-mediated diseases.",
@@ -271,42 +271,20 @@ def scripts_block() -> str:
 </script>"""
 
 
-def legacy_session_body(session: dict) -> Optional[str]:
-    source = LEGACY_SOURCE_PAGES.get(session["number"])
-    if source is None or not source.exists():
-        return None
-
-    text = source.read_text(encoding="utf-8", errors="ignore")
-    start = text.find("  <!-- Top-level linked list -->")
-    end = text.find("</body>", start)
-    if start == -1 or end == -1:
-        return None
-
-    body = text[start:end]
-    body = body.replace(f"Scientific Session {session['number']}", session["title"])
-    body = body.replace("../page-18140/index.html", "../DSDSS2026-invited-speakers/index.html")
-    body = body.replace("../page-18134/index.html", "../DSDSS2026-committee/index.html")
-    body = body.replace("../page-18133/index.html", "../DSDSS2026-speakers/index.html")
-    body = body.replace("../page-18146/index.html", "../DSDSS2026-scientific-session-1/index.html")
-    body = body.replace("../page-18147/index.html", "../DSDSS2026-scientific-session-2/index.html")
-    body = body.replace("../page-18148/index.html", "../DSDSS2026-scientific-session-3/index.html")
-    body = body.replace("../page-18149/index.html", "../DSDSS2026-scientific-session-4/index.html")
-    body = body.replace("../page-18150/index.html", "../DSDSS2026-scientific-session-5/index.html")
-    body = re.sub(r'<img[^>]*>', '<div class="blank-photo"></div>', body)
-    return body
-
-
 def landing_card(session: dict) -> str:
     summary_html = "\n".join(
         f"      <p>{paragraph}</p>" for paragraph in session["summary"]
     )
+    schedule_html = ""
+    if session.get("day") and session.get("time"):
+        schedule_html = f'      <p><strong>{session["day"]}</strong><br>{session["time"]}</p>\n'
     return f"""  <div class="plenary-talk" id="session-{session["number"]}">
     <h3><strong>{session["title"]}</strong></h3>
     <div class="plenary-details">
       <div class="blank-photo"></div>
       <h3><strong>Organizer: <a href="../DSDSS2026-speakers/index.html">{session["organizer_name"]}</a></strong></h3>
       <p><strong>{session["organizer_org"]}</strong></p>
-      <div class="abstract-content">
+{schedule_html}      <div class="abstract-content">
 {summary_html}
       </div>
       <button class="read-more-btn" onclick="toggleBio(this)">Read more</button>
@@ -348,26 +326,18 @@ def landing_inner_html() -> str:
 
 
 def session_inner_html(session: dict) -> str:
-    legacy_body = legacy_session_body(session)
-    if legacy_body is not None:
-        return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{session["title"]}</title>
-{styles_block()}
-</head>
-<body>
-{scripts_block()}
-
-{legacy_body}
-
-</body>
-</html>"""
-
     summary_html = "\n".join(
         f"      <p>{paragraph}</p>" for paragraph in session["summary"]
     )
+    schedule_list_item = ""
+    schedule_html = ""
+    if session.get("day") and session.get("time"):
+        schedule_list_item = f"""    <li>
+      <strong>Schedule:</strong> {session["day"]}, {session["time"]}
+    </li>
+"""
+        schedule_html = f"""      <p><strong>Schedule:</strong> {session["day"]}<br>{session["time"]}</p>
+"""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -384,6 +354,9 @@ def session_inner_html(session: dict) -> str:
     <li>
       <strong>Organizer:</strong> {session["organizer_name"]}, {session["organizer_org"]}
     </li>
+{schedule_list_item}    <li>
+      <a href="../DSDSS2026-agenda/index.html">Back to Agenda &amp; Program</a>
+    </li>
     <li>
       <a href="../DSDSS2026-scientific-sessions/index.html">Back to Scientific Sessions</a>
     </li>
@@ -395,7 +368,7 @@ def session_inner_html(session: dict) -> str:
       <h3><strong>{session["title"]}</strong></h3>
       <h3><strong>Organizer: <a href="../DSDSS2026-speakers/index.html">{session["organizer_name"]}</a></strong></h3>
       <p><strong>{session["organizer_org"]}</strong></p>
-      <div class="abstract-content">
+{schedule_html}      <div class="abstract-content">
 {summary_html}
       </div>
       <button class="read-more-btn" onclick="toggleBio(this)">Read more</button>
