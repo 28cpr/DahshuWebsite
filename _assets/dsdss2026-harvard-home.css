@@ -122,7 +122,7 @@ body {
   padding: 8px 14px 8px 8px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
-  border: 2px solid rgba(197, 234, 242, 0.85);
+  border: 2px solid rgba(255, 214, 221, 0.88);
   color: #fff;
   text-decoration: none;
   font-weight: 700;
@@ -136,7 +136,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #78b6c8;
+  background: #c4495c;
   color: #fff;
   font-size: 0.9rem;
 }
@@ -184,12 +184,12 @@ body {
   height: 11px;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 213, 219, 0.88);
   cursor: pointer;
 }
 
 .dot.is-active {
-  background: #78b64b;
+  background: #a51c30;
 }
 
 .section-heading {
@@ -342,11 +342,11 @@ body {
 }
 
 .linkedin-link {
-  background: #0a66c2;
+  background: #a51c30;
 }
 
 .youtube-link {
-  background: #ff0000;
+  background: #861627;
 }
 
 .social-glyph {

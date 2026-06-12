@@ -1,3 +1,191 @@
+.dsdss2026Page,
+.dsdss2026Section {
+  --d26-crimson: #a51c30;
+  --d26-crimson-deep: #861627;
+  --d26-crimson-soft: #c4495c;
+  --d26-rose: #f7ecef;
+  --d26-rose-line: #e4c9cf;
+  --d26-ink: #2f1f22;
+}
+
+.dsdss2026Page .WaGadgetMenuHorizontal .menuInner ul.firstLevel > li > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal .menuInner ul.firstLevel > li > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal .menuInner ul.firstLevel > li > .item > a span,
+.dsdss2026Section .WaGadgetMenuHorizontal .menuInner ul.firstLevel > li > .item > a span {
+  color: #ffffff !important;
+}
+
+.dsdss2026Page .WaGadgetMenuHorizontal ul.firstLevel > li.sel > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.firstLevel > li.sel > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.firstLevel > li:hover > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.firstLevel > li:hover > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.firstLevel > li.dir:hover > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.firstLevel > li.dir:hover > .item > a {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+}
+
+.dsdss2026Page .WaGadgetMenuHorizontal ul.secondLevel,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.thirdLevel,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.secondLevel,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.thirdLevel {
+  background: var(--d26-crimson) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.dsdss2026Page .WaGadgetMenuHorizontal ul.secondLevel li > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.thirdLevel li > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.secondLevel li > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.thirdLevel li > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.secondLevel li > .item > a span,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.thirdLevel li > .item > a span,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.secondLevel li > .item > a span,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.thirdLevel li > .item > a span {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+.dsdss2026Page .WaGadgetMenuHorizontal ul.secondLevel li.sel > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.thirdLevel li.sel > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.secondLevel li:hover > .item > a,
+.dsdss2026Page .WaGadgetMenuHorizontal ul.thirdLevel li:hover > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.secondLevel li.sel > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.thirdLevel li.sel > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.secondLevel li:hover > .item > a,
+.dsdss2026Section .WaGadgetMenuHorizontal ul.thirdLevel li:hover > .item > a {
+  background: var(--d26-crimson-deep) !important;
+}
+
+.dsdss2026Page .WaGadgetBreadcrumbs a,
+.dsdss2026Section .WaGadgetBreadcrumbs a,
+.dsdss2026Page .WaLayoutContainer:not(.WaLayoutContainerLast) .WaGadgetContent a,
+.dsdss2026Section .WaLayoutContainer:not(.WaLayoutContainerLast) .WaGadgetContent a,
+.dsdss2026Page .WaGadgetCustomHTML a,
+.dsdss2026Section .WaGadgetCustomHTML a {
+  color: var(--d26-crimson) !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML body,
+.dsdss2026Section .WaGadgetCustomHTML body {
+  background: linear-gradient(180deg, var(--d26-rose) 0%, #ffffff 100%) !important;
+  color: var(--d26-ink) !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML h1,
+.dsdss2026Page .WaGadgetCustomHTML h2,
+.dsdss2026Page .WaGadgetCustomHTML h3,
+.dsdss2026Page .WaGadgetCustomHTML h4,
+.dsdss2026Page .WaGadgetCustomHTML h5,
+.dsdss2026Page .WaGadgetCustomHTML h6,
+.dsdss2026Section .WaGadgetCustomHTML h1,
+.dsdss2026Section .WaGadgetCustomHTML h2,
+.dsdss2026Section .WaGadgetCustomHTML h3,
+.dsdss2026Section .WaGadgetCustomHTML h4,
+.dsdss2026Section .WaGadgetCustomHTML h5,
+.dsdss2026Section .WaGadgetCustomHTML h6 {
+  color: var(--d26-crimson) !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML [class*="button"],
+.dsdss2026Page .WaGadgetCustomHTML button,
+.dsdss2026Page .WaGadgetCustomHTML input[type="submit"],
+.dsdss2026Page .WaGadgetCustomHTML input[type="button"],
+.dsdss2026Section .WaGadgetCustomHTML [class*="button"],
+.dsdss2026Section .WaGadgetCustomHTML button,
+.dsdss2026Section .WaGadgetCustomHTML input[type="submit"],
+.dsdss2026Section .WaGadgetCustomHTML input[type="button"],
+.dsdss2026Page .functionalButton,
+.dsdss2026Page .typeButton,
+.dsdss2026Section .functionalButton,
+.dsdss2026Section .typeButton {
+  background: linear-gradient(135deg, var(--d26-crimson-soft) 0%, var(--d26-crimson) 100%) !important;
+  border-color: var(--d26-crimson) !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML [class*="button"]:hover,
+.dsdss2026Page .WaGadgetCustomHTML button:hover,
+.dsdss2026Page .WaGadgetCustomHTML input[type="submit"]:hover,
+.dsdss2026Page .WaGadgetCustomHTML input[type="button"]:hover,
+.dsdss2026Section .WaGadgetCustomHTML [class*="button"]:hover,
+.dsdss2026Section .WaGadgetCustomHTML button:hover,
+.dsdss2026Section .WaGadgetCustomHTML input[type="submit"]:hover,
+.dsdss2026Section .WaGadgetCustomHTML input[type="button"]:hover,
+.dsdss2026Page .functionalButton:hover,
+.dsdss2026Page .typeButton:hover,
+.dsdss2026Section .functionalButton:hover,
+.dsdss2026Section .typeButton:hover {
+  background: var(--d26-crimson-deep) !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML .intro,
+.dsdss2026Page .WaGadgetCustomHTML .speaker-card,
+.dsdss2026Page .WaGadgetCustomHTML .plenary-talk,
+.dsdss2026Page .WaGadgetCustomHTML .sponsor-card,
+.dsdss2026Page .WaGadgetCustomHTML .venue-card,
+.dsdss2026Section .WaGadgetCustomHTML .intro,
+.dsdss2026Section .WaGadgetCustomHTML .speaker-card,
+.dsdss2026Section .WaGadgetCustomHTML .plenary-talk,
+.dsdss2026Section .WaGadgetCustomHTML .sponsor-card,
+.dsdss2026Section .WaGadgetCustomHTML .venue-card {
+  border-color: var(--d26-rose-line) !important;
+  box-shadow: 0 10px 24px rgba(165, 28, 48, 0.08) !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML [style*="color:#0b1f44" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color: #0b1f44" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color:#004080" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color: #004080" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color:#438cca" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color: #438cca" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color:lightblue" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="color: lightblue" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color:#0b1f44" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color: #0b1f44" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color:#004080" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color: #004080" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color:#438cca" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color: #438cca" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color:lightblue" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="color: lightblue" i] {
+  color: var(--d26-crimson) !important;
+}
+
+.dsdss2026Page .WaGadgetCustomHTML [style*="background-color:#438cca" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background-color: #438cca" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background-color:#004080" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background-color: #004080" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background:#438cca" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background: #438cca" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background:#004080" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background: #004080" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background:#4cb5c4" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background: #4cb5c4" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background:#f0f8ff" i],
+.dsdss2026Page .WaGadgetCustomHTML [style*="background: #f0f8ff" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background-color:#438cca" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background-color: #438cca" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background-color:#004080" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background-color: #004080" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background:#438cca" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background: #438cca" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background:#004080" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background: #004080" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background:#4cb5c4" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background: #4cb5c4" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background:#f0f8ff" i],
+.dsdss2026Section .WaGadgetCustomHTML [style*="background: #f0f8ff" i] {
+  background: linear-gradient(180deg, var(--d26-rose) 0%, #ffffff 100%) !important;
+  background-color: var(--d26-rose) !important;
+  border-color: var(--d26-rose-line) !important;
+}
+
+.dsdss2026Page .WaGadgetSocialProfile a,
+.dsdss2026Section .WaGadgetSocialProfile a {
+  background: var(--d26-crimson) !important;
+}
+
 .dsdss2026Page .light-blue-button,
 .dsdss2026Page .heavy-blue-button,
 .dsdss2026Page .sky-blue-button,
