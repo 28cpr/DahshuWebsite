@@ -93,8 +93,14 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
 </div>
 </li>
 	
+<li class=" ">
+	<div class="item">
+		<a href="../DSDSS2026-keynote-session-2/index.html" title="Susan Murphy"><span>Susan Murphy</span></a>
+</div>
+</li>
+	
 </ul>
-	</div>
+</div>
 </li>
 	
 <li class=" dir">
@@ -165,7 +171,7 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
 	
 <li class=" ">
 	<div class="item">
-		<a href="../DSDSS2026-sponsor/index.html" title="Sponsor"><span>Sponsor</span></a>
+		<a href="../page-18143/index.html" title="Sponsor"><span>Sponsor</span></a>
 </div>
 </li>
 	
@@ -224,74 +230,87 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Plenary Talks</title>
+  <title>Keynote Speakers</title>
   <style>
-    /* Ensure a single font everywhere */
     body {
       font-family: "Times New Roman", Times, serif;
       color: #333;
       margin: 0;
       padding: 1rem;
     }
-
-    /* Top‐level list */
     ul.plenary-list {
       list-style: disc inside;
       margin: 0 0 2rem;
       font-size: 1rem;
     }
     ul.plenary-list li a {
-      color: #0b1f44;
+      color: #a51c30;
       text-decoration: none;
       font-weight: bold;
     }
     ul.plenary-list li a:hover {
       text-decoration: underline;
     }
-
-    /* Single‐column speaker + abstract container */
     .plenary-talk {
       display: flex;
-      flex-direction: column;   /* stack children vertically */
+      flex-direction: column;
       background: #fff;
       padding: 1.2rem;
       margin-bottom: 2rem;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      gap: 1.5rem;              /* space between Qiao, Zhu, and abstract */
+      gap: 1.5rem;
     }
-
-    /* Consistent image styling */
-.plenary-talk img {
-  float: left;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: top center;  /* ↑ 对齐到图片顶部水平居中 */
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  margin: 0 1.5rem 1rem 0;
-}
-    /* Shared details styling */
     .plenary-details {
       text-align: left;
     }
     .plenary-details h3 {
       margin: 0 0 0.5rem;
       font-size: 1.3rem;
-      color: #0b1f44;
+      color: #6f1726;
     }
     .plenary-details p {
       margin: 0;
       line-height: 1.6;
       color: #555;
     }
-
-    /* Make images responsive on narrow screens */
+    .blank-photo {
+      float: left;
+      width: 200px;
+      height: 200px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      margin: 0 1.5rem 1rem 0;
+      background: linear-gradient(135deg, #f6ecee 0%, #ffffff 100%);
+    }
+    .bio-content {
+      max-height: 200px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.5s ease;
+    }
+    .bio-content.expanded {
+      max-height: 1000px;
+    }
+    .read-more-btn {
+      display: inline-block;
+      margin: 1rem 0 0 calc(200px + 1rem);
+      padding: 0.45rem 0.95rem;
+      background: #a51c30;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-family: "Times New Roman", Times, serif;
+      color: #ffffff;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1rem;
+    }
     @media (max-width: 600px) {
-      .plenary-talk img {
+      .blank-photo {
         width: 100%;
-        height: auto;
+        height: 200px;
+        margin-right: 0;
       }
       .plenary-details h3 {
         font-size: 1.2rem;
@@ -300,71 +319,11 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
       .plenary-details {
         text-align: center;
       }
+      .read-more-btn {
+        margin-left: 0;
+        text-align: center;
+      }
     }
-
-    .outline-list {
-      list-style: disc inside;
-      margin: 0 0 1rem;
-      padding: 0;
-      font-family: inherit;      /* inherits Times New Roman */
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-    .outline-list li {
-      margin-bottom: 0.5rem;
-    }
-    .outline-list ul {
-      margin: 0.5rem 0 0.5rem 1.5rem;
-    }
-
-    .plenary-details .pub-list {
-      list-style: disc inside;
-      margin: 1rem 0;
-      padding: 0;
-      font-family: inherit;    /* inherits Times New Roman */
-      color: #555;
-      line-height: 1.6;
-    }
-    .plenary-details .pub-list li {
-      margin-bottom: 0.5rem;
-    }
-    h3 {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.bio-content {
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.5s ease;
-}
-
-.bio-content.expanded {
-  max-height: 1000px; /* 足够展开 */
-}
-
-.read-more-btn {
-  display: block; 
-  /* 上面留 1rem 空隙，左边缩进等于图片宽度 + 图片右侧外边距 */
-  margin: 1rem 0 0 calc(200px + 1rem);
-  background: none;
-  border: none;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif; /* 新罗马字体 */
-  color: #D4AF37;    /* 浅金色 */
-  cursor: pointer;
-  text-align: left;
-  font-size: 1.2rem; 
-}
-
-/* 小屏幕时去掉缩进，让它居中显示 */
-@media (max-width: 600px) {
-  .read-more-btn {
-    margin-left: 0;
-    text-align: center;
-  }
-}
   </style>
 </head>
 <body>
@@ -376,83 +335,43 @@ function toggleBio(button) {
 }
 </script>
 
-  <!-- Top-level linked list -->
   <ul class="plenary-list">
     <li>
       <strong>Keynote Speaker:</strong>
-      <a href="index.html">Dr. Haiyan Huang (University of California, Berkeley)</a>
+      <a href="../DSDSS2026-keynote-session-1/index.html">Goncalo Rocha Abecasis</a>
     </li>
-    <br>
     <li>
       <strong>Keynote Speaker:</strong>
-      <a href="index.html">Dr. David Madigan (Northeastern University)</a>
+      <a href="../DSDSS2026-keynote-session-2/index.html">Susan Murphy</a>
     </li>
-    <br>
-    <li>
-      <strong>Keynote Speaker:</strong>
-      <a href="index.html">Dr. Gene A. Pennello (FDA)</a>
-    </li>
-    
-     
-   
   </ul>
-  
- 
-  <!-- Speaker bio block -->
- 
-     <div class="plenary-talk" id="Haiyan Huang">
+
+  <div class="plenary-talk" id="goncalo">
     <div class="plenary-details">
-      <h3><strong>Dr. Haiyan Huang</strong></h3>
-      <img src="../_assets/dahshu.wildapricot.org/resources/Pictures/haiyan.png" alt="Dr. Haiyan Huang">
-      <p><strong>Professor, University of California, Berkeley</strong></p>
-      <p>
-      <strong>Bio: </strong>  Haiyan Huang received her BS in Mathematics at Peking University in 1997, her PhD in Applied Mathematics at the University of Southern California in 2001. She did postdoc at Harvard University from 2001-2003. She is currently a Professor in the Department of Statistics at UC Berkeley. She served as Chair of the Statistics Department from July 2022 to June 2025, and as Director of the Center for Computational Biology at UC Berkeley from July 2019 to June 2022. She is a Fellow of the American Statistical Association (ASA) and the Institute of Mathematical Statistics (IMS).
-
-      </p>
+      <h3><strong>Goncalo Rocha Abecasis</strong></h3>
+      <div class="blank-photo"></div>
+      <p><strong>Affiliation:</strong> Regeneron</p>
+      <div class="bio-content expanded">
+        <p>Abstract to be provided.</p>
+      </div>
     </div>
-    
-
   </div>
- <div class="plenary-talk" id="david-madigan">
+
+  <div class="plenary-talk" id="susan">
     <div class="plenary-details">
-      <h3><strong>Dr. David Madigan</strong></h3>
-      <img src="../_assets/dahshu.wildapricot.org/resources/Pictures/madigan.jpg" alt="Dr. David Madigan">
-      <p><strong>Professor, Northeastern University</strong></p>
-     <div class="bio-content">
-      <p>
-      <strong>Bio: </strong>  Professor David Madigan is the Provost and Senior Vice President for Academic Affairs at Northeastern University, where he is also a Professor of Statistics. Previously he served as Executive Vice President of Arts and Sciences and Dean of the Faculty at Columbia University, and as Chair of Columbia’s Department of Statistics. He has also held positions at AT&amp;T Inc., Rutgers University, and the University of Washington.
-      </p>
-      <p>
-        His research spans Bayesian statistics, text mining, Monte Carlo methods, pharmacovigilance, and probabilistic graphical models. He holds a B.Sc. in Mathematical Sciences and a Ph.D. in Statistics from Trinity College Dublin. He is a Fellow of the American Statistical Association, the Institute of Mathematical Statistics, and the AAAS, and has served as Editor-in-Chief of <em>Statistical Science</em>.
-      </p>
+      <h3><strong>Susan Murphy</strong></h3>
+      <img src="../_assets/7d07c87a0885fc27a8bb61d04b5c10bb.JPG" alt="Susan Murphy" style="float:left;width:200px;height:200px;object-fit:cover;border-radius:6px;border:1px solid #ddd;margin:0 1.5rem 1rem 0;">
+      <p><strong>Affiliation:</strong> To do</p>
+      <div class="bio-content expanded">
+        <p>Abstract to be provided.</p>
+      </div>
     </div>
-    <button class="read-more-btn" onclick="toggleBio(this)">Read more</button>
   </div>
-  </div>
-
-
- <div class="plenary-talk" id="Gene A. Pennello">
-    <div class="plenary-details">
-      <h3><strong>Dr. Gene A. Pennello</strong></h3>
-      <img src="../_assets/dahshu.wildapricot.org/resources/Pictures/Gene.jpg" alt="Dr. Gene A. Pennello">
-      <p><strong>US Food and Drug Administration (FDA)</strong></p>
-     <div class="bio-content">
-      <p>
-      <strong>Bio: </strong> For the past 27 years, Gene A. Pennello has been a review and research statistician at the US Food and Drug Administration (FDA), Center for Devices and Radiological Health (CDRH). At FDA, Gene’s official area of expertise is design and analysis of studies concerning diagnostic devices, with particular emphasis on drug-diagnostic co-development and evaluation of imaging systems. In 2020, Gene joined the Division of Imaging, Diagnostics, and Software Reliability (DIDSR), whose research includes addressing emerging challenges in regulatory assessment of artificial-intelligence(AI)-enabled medical devices. Gene is a fellow of the American Statistical Association (ASA).
-      </p>
-    </div>
-  
-  </div>
-  </div>
-   
-    
-
-   
 
 </body>
 </html></div>
 </div><div id="id_WpXCHAw" data-componentId="CCnAIrg" class="WaLayoutContainerLast" style="background-color:#A51C30;"><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="WpXCHAw_row" class="WaLayoutRow"><td id="id_dtX8lfG" data-componentId="Db176t5" class="WaLayoutItem" style="width:50%;"><div id="id_l8qVStJ" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="SsmImVO" style=""><div style=""><div id="id_9Bzla2j" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#A51C30;" data-componentId="UxlMrJ7" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-left:10px;" data-editableArea="0" data-areaHeight="auto">
-<h3 style="line-height: 19px;"><strong><font style="font-size: 16px;" face="Jost, sans-serif" color="#ffffff"></font></strong></h3><h3 style="line-height: 32px;"><strong><font style="font-size: 16px;" color="#ffffff" face="Times New Roman"></font></strong></h3><h3 style="line-height: 19px; margin-top: 1em !important;"><strong><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">DahShu 2026 Contact</font></strong></h3><p style="margin-top:1em !important;"><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">For all general questions about the symposium, including program details, registration, and logistics:</font></p><p style="margin-top:1em !important;"><font face="Times New Roman" color="#ffffff"><font style="font-size: 16px;"></font><span style="">Email: dahshu2025@gmail.com </span></font></p>
+<h3 style="line-height: 19px;"><strong><font style="font-size: 16px;" face="Jost, sans-serif" color="#ffffff"></font></strong></h3><h3 style="line-height: 32px;"><strong><font style="font-size: 16px;" color="#ffffff" face="Times New Roman"></font></strong></h3><h3 style="line-height: 19px; margin-top: 1em !important;"><strong><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">DahShu 2026 Contact</font></strong></h3><p style="margin-top:1em !important;"><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">For all general questions about the symposium, including program details, registration, and logistics:</font></p><p style="margin-top:1em !important;"><font face="Times New Roman" color="#ffffff"><font style="font-size: 16px;"></font><span style="">Email: dahshu2026@gmail.com </span></font></p>
 
 <p><br></p></div>
 </div></div></div></td><td style="" data-componentId="Db176t5_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_K55aycS" data-componentId="CLSVpzp" class="WaLayoutItem" style="width:50%;"><div id="id_rVsefe4" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="SEmo9rX" style=""><div style=""><div id="id_AlPKK1N" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="height:48px;" data-componentId="PihGbQM" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">

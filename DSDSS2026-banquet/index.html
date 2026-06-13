@@ -93,8 +93,14 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
 </div>
 </li>
 	
+<li class=" ">
+	<div class="item">
+		<a href="../DSDSS2026-keynote-session-2/index.html" title="Susan Murphy"><span>Susan Murphy</span></a>
+</div>
+</li>
+	
 </ul>
-	</div>
+</div>
 </li>
 	
 <li class=" dir">
@@ -165,7 +171,7 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
 	
 <li class=" ">
 	<div class="item">
-		<a href="../DSDSS2026-sponsor/index.html" title="Sponsor"><span>Sponsor</span></a>
+		<a href="../page-18143/index.html" title="Sponsor"><span>Sponsor</span></a>
 </div>
 </li>
 	
@@ -224,74 +230,87 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Plenary Talks</title>
+  <title>Banquet</title>
   <style>
-    /* Ensure a single font everywhere */
     body {
       font-family: "Times New Roman", Times, serif;
       color: #333;
       margin: 0;
       padding: 1rem;
     }
-
-    /* Top‐level list */
     ul.plenary-list {
       list-style: disc inside;
       margin: 0 0 2rem;
       font-size: 1rem;
     }
     ul.plenary-list li a {
-      color: #0b1f44;
+      color: #a51c30;
       text-decoration: none;
       font-weight: bold;
     }
     ul.plenary-list li a:hover {
       text-decoration: underline;
     }
-
-    /* Single‐column speaker + abstract container */
     .plenary-talk {
       display: flex;
-      flex-direction: column;   /* stack children vertically */
+      flex-direction: column;
       background: #fff;
       padding: 1.2rem;
       margin-bottom: 2rem;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      gap: 1.5rem;              /* space between Qiao, Zhu, and abstract */
+      gap: 1.5rem;
     }
-
-    /* Consistent image styling */
-.plenary-talk img {
-  float: left;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: top center;  /* ↑ 对齐到图片顶部水平居中 */
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  margin: 0 1.5rem 1rem 0;
-}
-    /* Shared details styling */
     .plenary-details {
       text-align: left;
     }
     .plenary-details h3 {
       margin: 0 0 0.5rem;
       font-size: 1.3rem;
-      color: #0b1f44;
+      color: #6f1726;
     }
     .plenary-details p {
       margin: 0;
       line-height: 1.6;
       color: #555;
     }
-
-    /* Make images responsive on narrow screens */
+    .blank-photo {
+      float: left;
+      width: 200px;
+      height: 200px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      margin: 0 1.5rem 1rem 0;
+      background: linear-gradient(135deg, #f6ecee 0%, #ffffff 100%);
+    }
+    .bio-content {
+      max-height: 200px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.5s ease;
+    }
+    .bio-content.expanded {
+      max-height: 1000px;
+    }
+    .read-more-btn {
+      display: inline-block;
+      margin: 1rem 0 0 calc(200px + 1rem);
+      padding: 0.45rem 0.95rem;
+      background: #a51c30;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-family: "Times New Roman", Times, serif;
+      color: #ffffff;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1rem;
+    }
     @media (max-width: 600px) {
-      .plenary-talk img {
+      .blank-photo {
         width: 100%;
-        height: auto;
+        height: 200px;
+        margin-right: 0;
       }
       .plenary-details h3 {
         font-size: 1.2rem;
@@ -300,71 +319,11 @@ var bonaPage_WebPackRootPath = '../_assets/live-sf.wildapricot.org/WebUI/built9.
       .plenary-details {
         text-align: center;
       }
+      .read-more-btn {
+        margin-left: 0;
+        text-align: center;
+      }
     }
-
-    .outline-list {
-      list-style: disc inside;
-      margin: 0 0 1rem;
-      padding: 0;
-      font-family: inherit;      /* inherits Times New Roman */
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-    .outline-list li {
-      margin-bottom: 0.5rem;
-    }
-    .outline-list ul {
-      margin: 0.5rem 0 0.5rem 1.5rem;
-    }
-
-    .plenary-details .pub-list {
-      list-style: disc inside;
-      margin: 1rem 0;
-      padding: 0;
-      font-family: inherit;    /* inherits Times New Roman */
-      color: #555;
-      line-height: 1.6;
-    }
-    .plenary-details .pub-list li {
-      margin-bottom: 0.5rem;
-    }
-    h3 {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.bio-content {
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.5s ease;
-}
-
-.bio-content.expanded {
-  max-height: 1000px; /* 足够展开 */
-}
-
-.read-more-btn {
-  display: block; 
-  /* 上面留 1rem 空隙，左边缩进等于图片宽度 + 图片右侧外边距 */
-  margin: 1rem 0 0 calc(200px + 1rem);
-  background: none;
-  border: none;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif; /* 新罗马字体 */
-  color: #D4AF37;    /* 浅金色 */
-  cursor: pointer;
-  text-align: left;
-  font-size: 1.2rem; 
-}
-
-/* 小屏幕时去掉缩进，让它居中显示 */
-@media (max-width: 600px) {
-  .read-more-btn {
-    margin-left: 0;
-    text-align: center;
-  }
-}
   </style>
 </head>
 <body>
@@ -376,72 +335,29 @@ function toggleBio(button) {
 }
 </script>
 
-  <!-- Top-level linked list -->
   <ul class="plenary-list">
-
     <li>
       <strong>Banquet Speaker:</strong>
-      <a href="index.html">Dr. Jing Huang (CareDx, Inc)</a>
+      <a href="index.html">To do</a>
     </li>
-     <li>
-      <strong>Chair:</strong>
-      <a href="index.html">Dr. Jiarui Zhang (Johnson & Johnson)</a>
-    </li>
-
   </ul>
-  
- 
-  <!-- Speaker bio block -->
- 
 
-   
-    
-
-   
-<div class="plenary-talk" id="Jing Huang">
-    
-
+  <div class="plenary-talk" id="placeholder">
     <div class="plenary-details">
-     <h3><strong>Title: From Data to Leadership: My Path to Chief Data & AI Officer </strong></h3>
-      <h3><strong>Dr. Jing Huang</strong></h3>
-      <img src="../_assets/dahshu.wildapricot.org/resources/Pictures/Jinghuang.JPEG" alt="Dr. Jing Huang">
-      <p><strong>Chief Data & AI Officer, CareDx, Inc</strong></p>
-     <div class="bio-content">
-      <p>
-        Jing Huang received her B.A. in Statistics and Probability from Peking University and her Ph.D.in Statistics and M.S. in Epidemiology from Stanford University. She has been working in the biomedical field for over 20 years and her research interest focuses on statistical methodologies in clinical trial design, genomic analysis, and machine learning. She is currently the Chief Data & AI Officer at CareDx, Inc. (Nasdaq: CDNA)- The Transplant Company™. She is responsible for advancing CareDx’s efforts to integrate data science methods and AI into its customer facing products to enhance patient care, and its internal business operations to achieve improved efficiency and scalability. Jing has co-authored more than 30 articles in peer-reviewed scientific journals with over ten thousand citations and is co-inventor of over 20 patent filings. Besides her daily work, she actively promotes data science through many of her volunteer activities: She is the founding president of DahShu, a 501(c)(3) nonprofit organization with the mission of promoting research and education in data science. She is currently the chapter representative of American Statistical Association San Francisco Bay Area Chapter (SFASA). In 2023, Jing was elected as lifetime Fellow of the American Statistical Association to recognize her outstanding contributions to the medical research community in the field of statistics; for numerous statistical innovations in genomic tests; and for exemplary leadership and community service to the profession.
-
-      </p>
+      <h3><strong>To do</strong></h3>
+      <div class="blank-photo"></div>
+      <p><strong>To do</strong></p>
+      <div class="bio-content">
+        <p>To do</p>
+      </div>
+      <button class="read-more-btn" onclick="toggleBio(this)">Read more</button>
     </div>
-    <button class="read-more-btn" onclick="toggleBio(this)">Read more</button>
   </div>
-  </div>
-<div class="plenary-talk" id="Jiarui Zhang">
-    
 
-    <div class="plenary-details">
-     
-      <h3><strong>Dr. Jiarui Zhang</strong></h3>
-      <img src="../_assets/dahshu.wildapricot.org/resources/Pictures/jiarui.jpg" alt="Dr. Jiarui Zhang">
-      <p><strong>Assoc Director, Clinical Sciences, Oncology, Johnson & Johnson
-</strong></p>
-     <div class="bio-content">
-      <p>
-        Jiarui Zhang is a computational biologist and leader in translational oncology research. He holds a degree of Medicine from Fudan University and a Ph.D. in CompBio from Boston University. With expertise in applying data science, advanced computational techniques, and AI to cancer research, Jiarui currently serves as the Associate Director of the Computational Biology team within Oncology Translational Research.  In his role, he leads efforts to translate complex omics data into actionable biomarker insights to guide clinical development, patient selection, and understanding drug mechanisms of action and resistance across more than 10 clinical trials in solid tumors. His data-driven research has contributed significantly to the development of paradigm-shifting therapeutics in lung and bladder cancer, with a track record that includes 7 FDA approvals and publications in top peer-reviewed clinical and translational journals.  Since 2018, Jiarui has also been leading the volunteer team of DahShu, supporting and organizing monthly seminars and IDSWG events to foster knowledge sharing and collaboration within the community.
-
-      </p>
-    </div>
-    <button class="read-more-btn" onclick="toggleBio(this)">Read more</button>
-  </div>
-  </div>
-  
-  
-
-  
-  
 </body>
 </html></div>
 </div><div id="id_WpXCHAw" data-componentId="CCnAIrg" class="WaLayoutContainerLast" style="background-color:#A51C30;"><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="WpXCHAw_row" class="WaLayoutRow"><td id="id_dtX8lfG" data-componentId="Db176t5" class="WaLayoutItem" style="width:50%;"><div id="id_l8qVStJ" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="SsmImVO" style=""><div style=""><div id="id_9Bzla2j" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#A51C30;" data-componentId="UxlMrJ7" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-left:10px;" data-editableArea="0" data-areaHeight="auto">
-<h3 style="line-height: 19px;"><strong><font style="font-size: 16px;" face="Jost, sans-serif" color="#ffffff"></font></strong></h3><h3 style="line-height: 32px;"><strong><font style="font-size: 16px;" color="#ffffff" face="Times New Roman"></font></strong></h3><h3 style="line-height: 19px; margin-top: 1em !important;"><strong><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">DahShu 2026 Contact</font></strong></h3><p style="margin-top:1em !important;"><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">For all general questions about the symposium, including program details, registration, and logistics:</font></p><p style="margin-top:1em !important;"><font face="Times New Roman" color="#ffffff"><font style="font-size: 16px;"></font><span style="">Email: dahshu2025@gmail.com </span></font></p>
+<h3 style="line-height: 19px;"><strong><font style="font-size: 16px;" face="Jost, sans-serif" color="#ffffff"></font></strong></h3><h3 style="line-height: 32px;"><strong><font style="font-size: 16px;" color="#ffffff" face="Times New Roman"></font></strong></h3><h3 style="line-height: 19px; margin-top: 1em !important;"><strong><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">DahShu 2026 Contact</font></strong></h3><p style="margin-top:1em !important;"><font style="font-size: 16px;" face="Times New Roman" color="#ffffff">For all general questions about the symposium, including program details, registration, and logistics:</font></p><p style="margin-top:1em !important;"><font face="Times New Roman" color="#ffffff"><font style="font-size: 16px;"></font><span style="">Email: dahshu2026@gmail.com </span></font></p>
 
 <p><br></p></div>
 </div></div></div></td><td style="" data-componentId="Db176t5_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_K55aycS" data-componentId="CLSVpzp" class="WaLayoutItem" style="width:50%;"><div id="id_rVsefe4" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="SEmo9rX" style=""><div style=""><div id="id_AlPKK1N" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="height:48px;" data-componentId="PihGbQM" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">

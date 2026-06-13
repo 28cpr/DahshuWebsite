@@ -5,7 +5,7 @@ from pathlib import Path
 from update_dsdss2026_scientific_sessions import rebuild_scientific_sessions
 
 
-SITE_ROOT = Path(__file__).resolve().parent.parent / "site"
+SITE_ROOT = Path(__file__).resolve().parent.parent
 UCONN_LOGO = "../_assets/dahshu.wildapricot.org/resources/Pictures/uconn2.png"
 HARVARD_LOGO = "../_assets/Harvard_University_coat_of_arms.svg"
 
@@ -21,7 +21,6 @@ PAGE_MAP = {
     "page-18139": "DSDSS2026-banquet-speakers",
     "page-18140": "DSDSS2026-invited-speakers",
     "page-18141": "DSDSS2026-keynote-speakers",
-    "page-18143": "DSDSS2026-sponsor",
     "page-18146": "DSDSS2026-scientific-session-1",
     "page-18147": "DSDSS2026-scientific-session-2",
     "page-18148": "DSDSS2026-scientific-session-3",
@@ -48,7 +47,6 @@ CLONE_SOURCES = {
     "page-18139": "DSDSS2026-banquet-speakers",
     "page-18140": "DSDSS2026-invited-speakers",
     "page-18141": "DSDSS2026-keynote-speakers",
-    "page-18143": "DSDSS2026-sponsor",
     "page-18146": "DSDSS2026-scientific-session-1",
     "page-18147": "DSDSS2026-scientific-session-2",
     "page-18148": "DSDSS2026-scientific-session-3",
@@ -104,6 +102,26 @@ def rewrite_links(text: str) -> str:
     return text
 
 
+def strip_sponsor_nav(text: str) -> str:
+    marker = (
+        '<li class=" ">\n'
+        '\t<div class="item">\n'
+        '\t\t<a href="../DSDSS2026-sponsor/index.html" title="Sponsor"><span>Sponsor</span></a>\n'
+        '</div>\n'
+        '</li>\n\t\n'
+    )
+    text = text.replace(marker, "")
+    root_marker = (
+        '<li class=" ">\n'
+        '                      <div class="item">\n'
+        '                        <a href="DSDSS2026-sponsor/index.html" title="Sponsor"><span>Sponsor</span></a>\n'
+        '                      </div>\n'
+        '                    </li>\n'
+    )
+    text = text.replace(root_marker, "")
+    return text
+
+
 def rewrite_content(text: str) -> str:
     replacements = {
         "DSDSS2025": "DSDSS2026",
@@ -135,6 +153,7 @@ def normalize_breadcrumbs(text: str) -> str:
 def transform(text: str) -> str:
     text = rewrite_links(text)
     text = rewrite_content(text)
+    text = strip_sponsor_nav(text)
     text = normalize_breadcrumbs(text)
     text = add_stylesheet(text)
     text = add_body_class(text)
